@@ -1,0 +1,63 @@
+body {
+  --slack-color: #3f0340;
+  margin: 0;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.closeBtn {
+  background-color: grey;
+}
+
+.app_body {
+  display: flex;
+  height: 100vh;
+}
+
+
+/* -------------- Channel Layout --------------- */
+/* ----------------------------------- */
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Use viewport height to make the app fill the screen */
+}
+
+.sidebar-container {
+  flex: 1; /* Allows the sidebar to take up the space it needs */
+  background-color: #3f0e40; /* Slack-like sidebar color */
+  color: #fff;
+  padding: 20px;
+}
+
+.chat-message-container {
+  flex: 3; /* Allows the chat container to take up more space than the sidebar */
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Enables scrolling for overflow */
+}
+
+.reply-message-container {
+  flex: 2; /* Adjusts the size of the reply container */
+  background-color: #f4f4f4; /* Slightly different background for distinction */
+  padding: 20px;
+  overflow-y: auto; /* Enables scrolling for overflow */
+}

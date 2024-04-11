@@ -1,0 +1,47 @@
+.sidebar-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for normal channels */
+.channel {
+  padding: 10px 20px; /* Add padding inside the items */
+  background-color: #3f0e40; /* Button background color */
+  color: white; /* Text color */
+  margin: 5px 0; /* Margin between items */
+  border: none; /* Removes border */
+  cursor: pointer; /* Changes the cursor on hover */
+  border-radius: 5px; /* Optional: Rounds the corners */
+  text-align: center; /* Centers the text */
+}
+
+.channel:hover {
+  background-color: #0056b3; /* Darker background on hover */
+}
+
+/* Style for the current channel */
+.current-channel {
+  background-color: #009688; /* Or any color that fits your design */
+  color: white;
+}
+
+/* ---------- Narrow Screen ------------ */
+
+@media (max-width: 768px) {
+  .sidebar-container, .chat-message-container, .reply-message-container {
+    width: 100%;
+    position: absolute;
+    height: calc(100% - 50px); /* Adjust height to account for menubar */
+    top: 50px; /* Start below the menubar */
+    left: 0;
+    display: none; /* Hide by default, will show based on state */
+  }
+
+  /* Show the active component based on an additional class */
+  .active-component {
+    display: block;
+  }
+}

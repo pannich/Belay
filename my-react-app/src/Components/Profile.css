@@ -1,0 +1,26 @@
+.alignedForm {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 100%;
+}
+
+.alignedForm > * {
+  padding: 4px;
+  margin: 6px;
+}
+
+.alignedForm input:invalid {
+  border: 1px dashed lightcoral;
+  border-radius: 1px;
+}
+
+.alignedForm error {
+  color: gray;
+  display: none;
+}
+.alignedForm input:invalid ~ error {
+  display: inline;
+}
+
+.alignedForm button {
+  margin-right: auto;
+}

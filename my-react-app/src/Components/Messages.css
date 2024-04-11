@@ -1,0 +1,83 @@
+.messages {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  background-color: #f0f0f0; /* Light grey background */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px; /* Space between messages */
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column; /* Ensure images stack vertically */
+  align-items: flex-start; /* Align images to the start of the container */
+}
+
+.images-container img {
+  max-width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  padding: 10px;
+}
+
+.messages_info {
+  padding: 10px;
+}
+
+.messages_timestamp {
+  color: grey;
+  font-weight: 300;
+  padding-left: 5px;
+  font-size: 13px;
+}
+
+/* ---------- Reply Button ---------- */
+
+.reply-button {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.reply-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* ---------- Reactions ---------- */
+
+.reaction-container {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.users-list {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  white-space: nowrap;
+  z-index: 1;  /*Make sure it appears above other elements*/
+}
+
+.reaction-container:hover .users-list {
+  display: block;
+}
+
+.emoji-btn {
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: inline;
+}
+
+/* ---------- ---------- */

@@ -1,0 +1,120 @@
+= database =
+*User
+*Channels
+*Messages
+
+// do migration files so that it can recreate database instead of storing the whole
+Schema
+
+= query note =
+* always parameterize `?`
+- ie.
+
+```
+import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('messaging_app.db')
+c = conn.cursor()
+
+# Example data
+channel_id = 1
+user_id = 1
+content = 'Hello, world!'
+replies_to = None  # This is a regular message, not a reply
+
+# Parameterized query to insert a new message
+query = '''INSERT INTO Messages (channel_id, user_id, content, replies_to)
+           VALUES (?, ?, ?, ?)'''
+params = (channel_id, user_id, content, replies_to)
+c.execute(query, params)
+
+# Commit the transaction and close the connection
+```
+
+# -------------------------------Axios -----------------------------------------------
+
+= Axios instead of Fetch in .js =
+`await axios.post('/api/your-endpoint', postData, config)`
+- config is things that you put in header
+
+```
+const postData = {
+  // Your post data here
+  key: 'value'
+};
+
+const config = {
+  headers: {
+    'Content-Type': 'application/json', // Specify the content type
+    'Authorization': 'Bearer YOUR_AUTH_TOKEN', // Authorization header, for example, a Bearer token
+    // Add any other headers you need
+  }
+};
+```
+
+`const response = await axios.post('/api/login', { username, password }, config);`
+The shorthand { username, password } is equivalent to { username: username, password: password } provided that username and password are variables that exist in your code, holding the values you wish to send in your request.
+
+
+# ------------------------------- REACT -----------------------------------------------
+
+== Functional Component ==
+```
+const Message = ({ id, text, onMessageSeen }) => {
+  ...
+};
+```
+- Is designed to display a message. Takes an id, text, and onMessageSeen callback as props.
+- function takes 3 arguments
+- uses :
+`<Message id="1" text="Hello, world!" onMessageSeen={handleMessageSeen} />`
+
+== useRef() ==
+
+`const messageRef = useRef();`
+
+- useRef is a hook provided by React that allows you to persist values between renders without causing a re-render of the component.
+- Here, it's used to create a ref object, messageRef, which can then be attached to a DOM element.
+
+`return <div ref={messageRef}>{text}</div>;`
+
+
+== Authentication ==
+-- createContext, useContext
+
+- A context (AuthContext) to globally manage authentication state.
+- A ProtectedRoute component to guard routes that require authentication, redirecting unauthenticated users to a login page.
+- React Router for navigating between different pages, like the login page and protected rooms.
+
+- useContext is a hook that lets you subscribe to React context within a functional component.
+
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" component={SignIn} />
+          <Route path="/channel/:id" component={Channel} />
+          <Route path="/" component={Welcome} />
+        </Routes>
+        <div className="App">
+          <h1>Hello, React!</h1>
+
+        </div>
+      </AuthProvider>
+    </BrowserRouter>
+
+  );
+}
+
+
+----------- db
+messages_in_chan = (select * from Usrmsgseen where user id =?, Usrmsgseen.channel_id =?
+
+left join Messages by Messages.channel_id == Usrmsgseen.channel_id)
+
+// then
+last_message_id_seen = messages_in_chan['last_message_id_seen']
+unread = len(messages_in_chan) - last_message_id_seen

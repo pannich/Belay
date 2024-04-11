@@ -1,0 +1,33 @@
+/* MenuBar.css */
+.navbar {
+  width: 100%; /* Ensure full width */
+  z-index: 1000; /* Ensure it's above other content */
+  height: 50px; /* Height of the menubar */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  border: '1px solid black';
+  padding: 1rem;
+}
+
+.navbar userDisplay {
+  display: flex;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+}
+
