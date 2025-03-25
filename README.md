@@ -1,4 +1,4 @@
-# Project: Belay (a Slack clone)
+# Project: Belay (a Messaging Platform)
 
 A full-stack web application development using React.js, FlaskAPI, Python, PostgreSQL
 
