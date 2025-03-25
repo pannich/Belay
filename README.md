@@ -1,5 +1,7 @@
 # Project: Belay (a Slack clone)
 
+A full-stack web application development using React.js, FlaskAPI, Python, PostgreSQL
+
 <img width="1043" alt="Screenshot 2567-04-11 at 15 04 06" src="https://github.com/pannich/Belay/assets/70697272/e63812b4-6c25-438b-9e6d-ce45a6305beb">
 <img width="1051" alt="Screenshot 2567-04-11 at 15 04 22" src="https://github.com/pannich/Belay/assets/70697272/1ebfa5e4-632b-4f73-9553-f09ec90cadde">
 
